@@ -1,6 +1,7 @@
 import React from 'react'
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
+import Upload from '@/components/admin/Upload'
 interface DataType{
   key:number,
   name:string,
@@ -32,7 +33,6 @@ const columns:ColumnsType<DataType>=[
     title:'操作',
     dataIndex:'',
     render:(item)=><div>
-      <Button  >修改</Button>
       <Button onClick={()=>handleDelete(item)}>删除</Button>
     </div>
   }
@@ -44,12 +44,15 @@ function handleDelete(item:DataType){
 
 export default function ResearchManage() {
   return (
-    <div>
+    <>
+      <Upload 
+        form={columns.slice(0,-1)}
+        table={'research'} />
       <Table 
        className='w-[1000px]'
         columns={columns}
         dataSource={data}
       ></Table>
-    </div>
+    </>
   )
 }

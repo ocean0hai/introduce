@@ -1,5 +1,6 @@
 import {Icon} from '@iconify/react'
-import { Switch } from 'antd'
+import { Switch,Space } from 'antd'
+
 import { useState } from 'react'
 import {Link,useLocation} from 'react-router-dom'
 const data=[
@@ -39,6 +40,7 @@ const data=[
     label:'加入我们'
   }
 ]
+
 export default function Header() {
   const [language,setLanguage]=useState('zh')
   // https://blog.csdn.net/isKelel/article/details/123070685
@@ -47,6 +49,21 @@ export default function Header() {
   function changeLangauge(value:boolean){
     setLanguage(value ? 'en':'zh' )
   }
+  function CheckOut(){
+  return (
+    <div className='text-3xl'>
+     ZH
+    </div>
+    )
+  }
+  function ChechClose(){
+    return (
+      <div className='text-3xl'>
+        EN
+      </div>
+    )
+  }
+
   return (
     <div className='w-[1400px] mx-auto h-20 flex justify-between mt-3 '>
       <div className='flex h-full w-56 '>
@@ -72,12 +89,17 @@ export default function Header() {
         } 
       </div>
       <div>
-        <Switch
-          onChange={changeLangauge}
-          checkedChildren='zh'
-          unCheckedChildren='en'
-        />
+        <Space direction="vertical">
+          <Switch 
+           className='w-20 h-10 '
+           checkedChildren={<CheckOut /> }
+           unCheckedChildren={<ChechClose />}
+           defaultChecked />
+        </Space>
       </div>
     </div>
   )
 }
+
+
+

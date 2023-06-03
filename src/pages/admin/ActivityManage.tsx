@@ -1,6 +1,6 @@
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
-import Modify from '@/components/admin/Modify'
+import Upload from '@/components/admin/Upload'
 
 interface DataType{
   key:number,
@@ -16,8 +16,8 @@ for(let i=0;i<10;i++){
     key:i,
     name:`${i}`,
     time:`${i}`,
-    imgsrc:'../../../public/123.jpg',
-    imgsrc2:'../../../public/123.jpg',
+    imgsrc:'1../../../public/123.jpg',
+    imgsrc2:'2../../../public/123.jpg',
     imgsrc3:'../../../public/123.jpg'
   })
 }
@@ -25,12 +25,26 @@ for(let i=0;i<10;i++){
 const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'name',dataIndex:'name'},
-  {title:'描述',dataIndex:'text'},
+  {title:'时间',dataIndex:'time'},
   {
     title:'图片',
     dataIndex:'',
     render:({imgsrc})=>{
-      return(<div><img className='w-72 h-40' src={imgsrc} alt="" /></div>
+      return(<div><img className=' w-40 h-24' src={imgsrc} alt='' /></div>
+      )}
+  },
+  {
+    title:'图片',
+    dataIndex:'',
+    render:({imgsrc2})=>{
+      return(<div><img className='w-40 h-24' src={imgsrc2} alt="" /></div>
+      )}
+  },
+  {
+    title:'图片',
+    dataIndex:'',
+    render:({imgsrc3})=>{
+      return(<div><img className='w-40 h-24' src={imgsrc3} alt="" /></div>
       )}
   },
   {
@@ -43,17 +57,23 @@ const columns:ColumnsType<DataType>=[
 ]
 function handleDelete(item:DataType){
   console.log(item);
-   
 }
-
+function handleUpload(form:any){
+  console.log(form);
+     
+}
 export default function ActivityManage() {
   return (
-    <div>
+    <>
+      <Upload 
+        form={columns.slice(0,-1)}
+        footer={handleUpload}
+        table={'research'} />
       <Table 
        className='w-[800px]'
         columns={columns}
         dataSource={data}
       ></Table>
-    </div>
+    </>
   )
 }

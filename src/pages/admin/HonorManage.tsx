@@ -1,5 +1,6 @@
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
+import Upload from '@/components/admin/Upload'
 
 interface DataType{
   key:number,
@@ -48,13 +49,16 @@ function handleDelete(item:DataType){
 
 export default function HonorManage() {
   return (
-    <div>
+    <>
+      <Upload 
+        form={columns.slice(0,-1)}
+        table={'research'} />
       <Table 
        className='w-[1100px]'
         columns={columns}
         dataSource={data}
       ></Table>
-    </div>
+    </>
   )
 }
 
