@@ -14,7 +14,7 @@ import ResearchManage from '@/pages/admin/ResearchManage'
 import ActivityManage from '@/pages/admin/ActivityManage'
 import CompetitionManage from '@/pages/admin/CompetitionManage'
 import HonorManage from '@/pages/admin/HonorManage'
-
+import Swipper from '@/pages/admin/Swipper'
 const routes=[
   {
     path:'/index',
@@ -80,6 +80,10 @@ const routes=[
       {
         path:'honormanage',
         element:<HonorManage />
+      },
+      {
+        path:"swippermanage",
+        element:<Swipper />
       }
     ]
 

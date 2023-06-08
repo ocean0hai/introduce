@@ -1,14 +1,12 @@
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
-
+import { UploadHooks } from '@/hooks/upload'
 interface DataType{
   key:number,
   name:string,
   time:string,
-  imgsrc:string,
-  imgsrc2:string,
-  imgsrc3:string,
+  imgsrc:Array<string>,
 }
 const data:DataType[]=[]
 for(let i=0;i<10;i++){
@@ -16,13 +14,13 @@ for(let i=0;i<10;i++){
     key:i,
     name:`${i}`,
     time:`${i}`,
-    imgsrc:'1../../../public/123.jpg',
-    imgsrc2:'2../../../public/123.jpg',
-    imgsrc3:'../../../public/123.jpg'
+    imgsrc:['../../../public/123.jpg','../../../public/123.jpg'],
   })
 }
 
-const columns:ColumnsType<DataType>=[
+export default function ActivityManage() {
+  const {handleDelete,handleUpload}=UploadHooks("activity")
+  const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'name',dataIndex:'name'},
   {title:'时间',dataIndex:'time'},
@@ -30,45 +28,31 @@ const columns:ColumnsType<DataType>=[
     title:'图片',
     dataIndex:'',
     render:({imgsrc})=>{
-      return(<div><img className=' w-40 h-24' src={imgsrc} alt='' /></div>
-      )}
-  },
-  {
-    title:'图片',
-    dataIndex:'',
-    render:({imgsrc2})=>{
-      return(<div><img className='w-40 h-24' src={imgsrc2} alt="" /></div>
-      )}
-  },
-  {
-    title:'图片',
-    dataIndex:'',
-    render:({imgsrc3})=>{
-      return(<div><img className='w-40 h-24' src={imgsrc3} alt="" /></div>
+      return( 
+        <div className='flex'>
+          {
+            imgsrc.map((item:string,index:number)=>{
+              return  <img key={index} className='w-40 h-30 mx-2' src={item} alt="" /> 
+            })
+          }
+        </div>
       )}
   },
   {
     title:'操作',
     dataIndex:'',
-    render:(item)=><div>
-      <Button onClick={()=>handleDelete(item)}>删除</Button>
+    render:({key})=><div>
+      <Button onClick={()=>handleDelete(key)}>删除</Button>
     </div>
   }
-]
-function handleDelete(item:DataType){
-  console.log(item);
-}
-function handleUpload(form:any){
-  console.log(form);
-     
-}
-export default function ActivityManage() {
+  ]
   return (
     <>
       <Upload 
         form={columns.slice(0,-1)}
-        footer={handleUpload}
-        table={'research'} />
+        table={'activity'} 
+        uploadData={handleUpload}
+      />
       <Table 
        className='w-[800px]'
         columns={columns}

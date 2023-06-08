@@ -18,7 +18,6 @@ api.interceptors.request.use(
 );
 
 api.interceptors.response.use((response: any) => {
-  console.log(response);
   if(response.data.code===204 || response.data.code===200){
     return response.data
   }else{

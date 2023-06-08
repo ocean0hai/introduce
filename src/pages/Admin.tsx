@@ -27,6 +27,11 @@ const menuData=[
     path:'honor',
     icon:'',
     label:'荣誉'
+  },
+  {
+    path:'swipper',
+    icon:'',
+    label:'轮播图'
   }
 ]
 

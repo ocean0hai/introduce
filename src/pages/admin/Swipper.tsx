@@ -2,37 +2,30 @@ import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
 import { UploadHooks } from '@/hooks/upload'
-
 interface DataType{
   key:number,
   name:string,
-  time:string,
-  imgsrc:string,
+  imgsrc:string
 }
 const data:DataType[]=[]
 for(let i=0;i<10;i++){
   data.push({
     key:i,
     name:`${i}`,
-    time:`${i}`,
-    imgsrc:'../../../public/123.jpg',
+    imgsrc:'../../../public/xiao.jpg'
   })
 }
 
-export default function HonorManage() {
-  const {handleDelete,handleUpload}=UploadHooks("honor")
+export default function Swipper() {
+  const {handleDelete,handleUpload}=UploadHooks('swipper')
   const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
-  {title:'比赛名',dataIndex:'name'},
-  {title:'时间',dataIndex:'time'},
+  {title:'名字',dataIndex:'name'},
   {
     title:'图片',
     dataIndex:'',
     render:({imgsrc})=>{
-      return(
-        <div className='flex'>
-          <img className='w-48 h-32 rounded-lg mx-2' src={imgsrc} alt="" />
-        </div>
+      return(<div><img src={imgsrc} alt="" /></div>
       )}
   },
   {
@@ -42,18 +35,19 @@ export default function HonorManage() {
       <Button onClick={()=>handleDelete(item)}>删除</Button>
     </div>
   }
-  ]
+]
   return (
     <>
       <Upload 
         form={columns.slice(0,-1)}
         uploadData={handleUpload}
-        table={'honor'} />
+        table={'swipper'} />
       <Table 
-       className='w-[1100px]'
+       className='w-[800px]'
         columns={columns}
         dataSource={data}
       ></Table>
+      
     </>
   )
 }

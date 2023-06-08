@@ -2,6 +2,7 @@ import React from 'react'
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
+import { UploadHooks } from '@/hooks/upload'
 interface DataType{
   key:number,
   name:string,
@@ -17,8 +18,9 @@ for(let i=0;i<10;i++){
     text:`${i}`
   })
 }
-
-const columns:ColumnsType<DataType>=[
+export default function ResearchManage() {
+  const {handleDelete,handleUpload}=UploadHooks("research")
+  const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'name',dataIndex:'name'},
   {title:'描述',dataIndex:'text'},
@@ -36,16 +38,11 @@ const columns:ColumnsType<DataType>=[
       <Button onClick={()=>handleDelete(item)}>删除</Button>
     </div>
   }
-]
-function handleDelete(item:DataType){
-  console.log(item);
-   
-}
-
-export default function ResearchManage() {
+  ]
   return (
     <>
       <Upload 
+        uploadData={handleUpload}
         form={columns.slice(0,-1)}
         table={'research'} />
       <Table 

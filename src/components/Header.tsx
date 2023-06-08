@@ -89,13 +89,11 @@ export default function Header() {
         } 
       </div>
       <div>
-        <Space direction="vertical">
           <Switch 
            className='w-20 h-10 '
            checkedChildren={<CheckOut /> }
            unCheckedChildren={<ChechClose />}
            defaultChecked />
-        </Space>
       </div>
     </div>
   )
