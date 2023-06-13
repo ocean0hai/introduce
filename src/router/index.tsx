@@ -2,7 +2,6 @@ import {Navigate} from 'react-router-dom'
 import Home from '@/pages/Home.tsx'
 import Activity from '@/pages/Activity'
 import Competition from '@/pages/Competition'
-import Join from '@/pages/Join'
 import Research from '@/pages/Research'
 import Team from '@/pages/Team'
 import Honor from '@/pages/Honor'
@@ -31,10 +30,6 @@ const routes=[
     {
       path:'competition',
       element:<Competition />
-    },
-    {
-      path:'join',
-      element:<Join />
     },
     {
       path:'research',

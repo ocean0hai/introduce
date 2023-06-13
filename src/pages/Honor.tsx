@@ -1,42 +1,18 @@
 import HonorBlock from "@/components/honor/HonorBlock"
-const honorData=[
-  {
-    year:'2023',
-    imgData:[
-      {
-        createTime:'232233',
-        name:'fasfdfas',
-        imgSrc:'../../public/123.jpg'
-      },
-      {
-        createTime:'232233',
-        name:'fasfdfas',
-        imgSrc:'../../public/123.jpg'
-      }
-    ]
-  },
-  {
-    year:'2024',
-    imgData:[
-      {
-        createTime:'23235234',
-        name:'fasfdfas',
-        imgSrc:'../../public/123.jpg'
-      }
-    ]
-  }
+import useGetTable from "@/hooks/useGetTable"
+import { honorts } from "@/utils/honor"
 
-]
 export default function Honor() {
-
+  const {data}=useGetTable('honor')
+  const datatime=honorts(data) 
   return (
     <div className="w-[1400px] mx-auto">
       <div className="w-full bg-cyan-50">
         <h1 className="py-10 text-center ml-10 text-[40px]">荣誉</h1>
       </div>
       {
-        honorData.map((item,index)=>{
-          return  <HonorBlock key={index} {...item}/> 
+        Object.keys(datatime).map((item,index)=>{
+          return  <HonorBlock key={index} year={item} data={datatime[item]} /> 
         })
       }
     </div>

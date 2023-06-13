@@ -30,8 +30,12 @@ export default function Upload({table,form,uploadData}:propsType) {
     setObj(pre=>obj1)
     setIsModalOpen(pre=>false);
   };
-  function uploadInput(files:any){
-    obj['files']=files.target.files 
+  function uploadInput(file:any){
+    if(typeof obj['files'] === 'undefined' ){
+      obj['files']=file
+    }else if(obj.files.length >0 ){
+      obj.files=[...obj.files,file[0]]
+    }
   }
   
   return (
@@ -50,10 +54,10 @@ export default function Upload({table,form,uploadData}:propsType) {
         >
 
           {
-            form.map(item=>{
+            form.map((item,index)=>{
               return ( item.dataIndex!=='' && item.dataIndex !== 'key') ? (
                 <Form.Item
-                key={item.dataIndex}
+                  key={index}
                   label={item.title}
                   name={item.dataIndex}
                   rules={[{ required: true, message: 'Please input your username!' }]}
@@ -65,8 +69,12 @@ export default function Upload({table,form,uploadData}:propsType) {
                   }}></Input>
                 </Form.Item>
               ): item.dataIndex === '' ? (
-                <Form.Item label={item.title} key={item.dataIndex} className='flex'>
-                  <input type="file" onChange={uploadInput}   />
+                <Form.Item label={item.title} key={index} className='flex'>
+                  <input 
+                  type="file" 
+                  onChange={(e)=>{
+                    uploadInput((e.target as HTMLInputElement).files)
+                  }}/>
                 </Form.Item>
               ):''
             })

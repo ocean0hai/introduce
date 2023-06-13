@@ -1,9 +1,7 @@
-import React from 'react'
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
-import { IconifyAPISendQuery } from '@iconify/react/dist/iconify.js'
-import { UploadHooks } from '@/hooks/upload'
+import { UploadHooks } from '@/hooks/useUpload'
 interface DataType{
   key:number,
   name:string,
@@ -30,7 +28,7 @@ export default function CompetitionManage() {
   {title:'描述',dataIndex:'text'},
   {title:'官网链接',dataIndex:'link'},
   {
-    title:'图片',
+    title:'img1',
     dataIndex:'',
     render:({imgsrc})=>{
       return(<div><img className='w-72 h-40' src={imgsrc} alt="" /></div>

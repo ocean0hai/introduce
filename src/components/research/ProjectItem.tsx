@@ -1,22 +1,25 @@
-import React from 'react'
-
-export default function ProjectItem() {
+interface propsType{
+  name:string,
+  imgsrc1:string,
+  text:string
+}
+export default function ProjectItem({
+ name,
+ imgsrc1,
+ text
+}:propsType) {
   return (
-    <div className='mx-4 my-8'>
-      <div className=' text-3xl'>
-        <h3 className='text-center font-bold'>fsadf</h3>
-        <img className='float-left mr-9 mb-3 rounded-2xl w-[400px] h-[300px]' src="../../../public/123.jpg" alt="" />
-        This project aims to develop and utilize humanoid robots for analyzing behavior
-         principles of children with ASDs and go beyond simple goals of using robots as 
-         a neat toy to make kids smile or maybe even engage in joint attention. Our goal 
-         is to use the robotic technology as co-robot to interpret behavior, determine if 
-         behavior is appropriate, provide feedback on different behavior, provide adaptation 
-         on for behavior therapy progress, and reward if behavior is improved towards therapeutic 
-         goals. We use Nao and Zeno, two commercially available humanoid robots and develop the 
-         necessary features such as facial expressions recognition, speech processing, and multi-modal 
-         feedback system for automatic interventions with children with ASDs. Families who would like to 
-         participate in this project can find information here.
-         For more information on the Nao and Zeno humanoid robots, follow this link.
+    <div className='w-full overflow-hidden'>
+      <div className='text-3xl mt-3'>
+        <h3 className='text-center font-bold'>{name}</h3>
+        <div className='w-full'>
+          <img className=' float-left mr-9 mb-3 rounded-2xl w-[400px] h-[300px]' src={imgsrc1}alt="" />
+          
+            浮动float,会导致子盒子脱离文档流，从而不会影响父盒子的实际高度，因此当
+            前父盒子高度为0。因为父盒子下面的盒子的实际位置
+            受当前父盒子位置的影响，但现在这个父盒子高度为0，即不占位置，那么下面再放盒子就会无视它喽
+          
+        </div>
       </div>
     </div>
   )

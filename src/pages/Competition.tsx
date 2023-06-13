@@ -1,14 +1,10 @@
 import CompetitionItem from "@/components/competition/CompetitionItem"
-const comData=[
-  {
-    name:'',
-    imgSrc:'',
-    text:'',
-    link:''
-  }
-]
+import useGetTable from "@/hooks/useGetTable"   
 
 export default function Competition() {
+  const {data}=useGetTable('competition')
+  console.log(data);
+  
   return (
     <div className="w-[1400px] mx-auto ">
       <div className="bg-red-500">
@@ -16,9 +12,13 @@ export default function Competition() {
           比赛
         </h1>
       </div>
-      <CompetitionItem></CompetitionItem>  
-      <CompetitionItem></CompetitionItem>  
-      <CompetitionItem></CompetitionItem>  
+      {
+        data.map(item=>{
+          return(
+            <CompetitionItem key={item.id} {...item} />  
+          )
+        })
+      }
     </div>
   )
 }

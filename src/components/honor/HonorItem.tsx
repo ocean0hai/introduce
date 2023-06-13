@@ -1,18 +1,18 @@
 
 interface propsType{
-  createTime:string,
+  time:string,
   name:string,
-  imgSrc:string
+  imgsrc1:string
 }
-export default function HonorItem({createTime,name,imgSrc}:propsType) {
+export default function HonorItem({time,name,imgsrc1}:propsType) {
   return (
     <div className="w-[450px] mx-2">
       <div>
         <h2>比赛-{name}</h2>
-        <h2>时间-{createTime}</h2>
+        <h2>时间-{time}</h2>
       </div>
       <div className="w-full">
-        <img className="w-[450px]" src={imgSrc} alt="" />
+        <img className="w-[450px]" src={imgsrc1} alt="" />
       </div>
     </div>
   )

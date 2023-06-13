@@ -1,43 +1,38 @@
 import {Icon} from '@iconify/react'
-import { Switch,Space } from 'antd'
+import { Switch,Space, Select } from 'antd'
 
 import { useState } from 'react'
 import {Link,useLocation} from 'react-router-dom'
 const data=[
   {
     key:'home',
-    icon:'' ,
+    icon:'ion:home' ,
     label:'主页'
   },
   {
     key:'team',
-    icon:'' ,
+    icon:'arcticons:team-fight-tactics' ,
     label:'团队'
   },
   {
     key:'research',
-    icon:'' ,
+    icon:'academicons:researcherid' ,
     label:'研究'
   },
   {
     key:'activity',
-    icon:'' ,
+    icon:'carbon:user-activity' ,
     label:'活动'
   },
   {
     key:'competition',
-    icon:'',
+    icon:'material-symbols:all-match-outline-sharp',
     label:'比赛' 
   },
   {
     key:'honor',
-    icon:'',
+    icon:'bxs:trophy',
     label:'荣誉'
-  },
-  {
-    key:'join',
-    icon:'' ,
-    label:'加入我们'
   }
 ]
 
@@ -46,29 +41,25 @@ export default function Header() {
   // https://blog.csdn.net/isKelel/article/details/123070685
   // https://blog.csdn.net/weixin_57002812/article/details/127736903
   const location=useLocation()
-  function changeLangauge(value:boolean){
-    setLanguage(value ? 'en':'zh' )
+  function handleChange(value:string){
+    console.log(value);
   }
-  function CheckOut(){
-  return (
-    <div className='text-3xl'>
-     ZH
-    </div>
-    )
-  }
-  function ChechClose(){
-    return (
-      <div className='text-3xl'>
-        EN
-      </div>
-    )
-  }
-
   return (
     <div className='w-[1400px] mx-auto h-20 flex justify-between mt-3 '>
       <div className='flex h-full w-56 '>
-        <Icon className='h-full w-16' icon="ic:baseline-error-outline" />
-        <h1 className='mt-5'>huoo</h1>
+        <Icon className='h-full w-16' icon="bxs:low-vision" />
+        <h1 className='mt-5'>计算机视觉</h1>
+      </div>
+      <div>
+        <Select
+          className='w-20'
+          defaultValue="中文"
+          onChange={handleChange} 
+          options={[
+            {value:'zh',label:'中文'},
+            {value:'en',label:'英文'},
+          ]}
+        ></Select>     
       </div>
       <div className='w-[800px] flex justify-between'>
         {
@@ -80,20 +71,13 @@ export default function Header() {
                 className='flex px-2 no-underline rounded-2xl hover:bg-gray-100'
                 style={{background: location.pathname=== '/index/'+item.key ? 'rgb(226 232 240)':'' }}
               >
-                <Icon className='h-full w-10' icon="ic:baseline-error-outline"/>
+                <Icon className='h-full w-10' icon={item.icon}/>
                 <span className='mt-6 text-[25px]'>
                   {item.label}
                 </span>
               </Link>
             )})
         } 
-      </div>
-      <div>
-          <Switch 
-           className='w-20 h-10 '
-           checkedChildren={<CheckOut /> }
-           unCheckedChildren={<ChechClose />}
-           defaultChecked />
       </div>
     </div>
   )

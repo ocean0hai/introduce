@@ -1,7 +1,7 @@
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
-import { UploadHooks } from '@/hooks/upload'
+import { UploadHooks } from '@/hooks/useUpload'
 interface DataType{
   key:number,
   name:string,
@@ -26,7 +26,7 @@ export default function TeamManage() {
   {title:'名字',dataIndex:'name'},
   {title:'身份',dataIndex:'identity'},
   {
-    title:'图片',
+    title:'img1',
     dataIndex:'',
     render:({imgsrc})=>{
       return(<div><img src={imgsrc} alt="" /></div>

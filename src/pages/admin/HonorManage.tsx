@@ -1,7 +1,7 @@
 import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
-import { UploadHooks } from '@/hooks/upload'
+import { UploadHooks } from '@/hooks/useUpload'
 
 interface DataType{
   key:number,
@@ -26,7 +26,7 @@ export default function HonorManage() {
   {title:'比赛名',dataIndex:'name'},
   {title:'时间',dataIndex:'time'},
   {
-    title:'图片',
+    title:'img1',
     dataIndex:'',
     render:({imgsrc})=>{
       return(
