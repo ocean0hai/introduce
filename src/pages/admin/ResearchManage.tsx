@@ -3,32 +3,27 @@ import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
 import { UploadHooks } from '@/hooks/useUpload'
+import useGetTable from '@/hooks/useGetTable'
 interface DataType{
   key:number,
   name:string,
-  imgsrc:string,
+  imgsrc1:string,
   text:string
 }
 const data:DataType[]=[]
-for(let i=0;i<10;i++){
-  data.push({
-    key:i,
-    name:`${i}`,
-    imgsrc:'../../../public/123.jpg',
-    text:`${i}`
-  })
-}
+
 export default function ResearchManage() {
   const {handleDelete,handleUpload}=UploadHooks("research")
+  const {data}=useGetTable('research')
   const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'name',dataIndex:'name'},
   {title:'描述',dataIndex:'text'},
   {
-    title:'img1',
+    title:'图片',
     dataIndex:'',
-    render:({imgsrc})=>{
-      return(<div><img className='w-72 h-40' src={imgsrc} alt="" /></div>
+    render:({imgsrc1})=>{
+      return(<div><img className='w-72 h-40' src={imgsrc1} alt="" /></div>
       )}
   },
   {

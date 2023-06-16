@@ -1,5 +1,4 @@
 import useGetTable from "@/hooks/useGetTable"
-import { useState } from "react"
 export default function Team() {
   const {data}=useGetTable('team')
   console.log(data);

@@ -2,30 +2,25 @@ import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
 import { UploadHooks } from '@/hooks/useUpload'
+import useGetTable from '@/hooks/useGetTable'
 interface DataType{
   key:number,
   name:string,
-  imgsrc:string
+  imgsrc1:string
 }
 const data:DataType[]=[]
-for(let i=0;i<10;i++){
-  data.push({
-    key:i,
-    name:`${i}`,
-    imgsrc:'../../../public/xiao.jpg'
-  })
-}
 
 export default function Swipper() {
   const {handleDelete,handleUpload}=UploadHooks('swipper')
+  const {data }=useGetTable('swipper')
   const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'名字',dataIndex:'name'},
   {
-    title:'img1',
+    title:'图片',
     dataIndex:'',
-    render:({imgsrc})=>{
-      return(<div><img src={imgsrc} alt="" /></div>
+    render:({imgsrc1})=>{
+      return(<div><img className='w-56 h-40' src={imgsrc1} alt="" /></div>
       )}
   },
   {

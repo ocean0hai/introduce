@@ -2,51 +2,43 @@ import type { ColumnsType } from 'antd/es/table'
 import {Table,Button} from 'antd'
 import Upload from '@/components/admin/Upload'
 import { UploadHooks } from '@/hooks/useUpload'
+import useGetTable from '@/hooks/useGetTable'
 interface DataType{
   key:number,
   name:string,
   time:string,
-  imgsrc:string,
+  imgsrc1:string,
   imgsrc2:string,
   imgsrc3:string,
 }
 const data:DataType[]=[]
-for(let i=0;i<10;i++){
-  data.push({
-    key:i,
-    name:`${i}`,
-    time:`${i}`,
-    imgsrc:'../../../public/123.jpg',
-    imgsrc2:'../../../public/123.jpg',
-    imgsrc3:'../../../public/123.jpg',
-  })
-}
 
 export default function ActivityManage() {
   const {handleDelete,handleUpload}=UploadHooks("activity")
+  const {data}=useGetTable('activity')
   const columns:ColumnsType<DataType>=[
   {title:'id',dataIndex:'key'},
   {title:'name',dataIndex:'name'},
   {title:'时间',dataIndex:'time'},
   {
-    title:'img1',
+    title:'图片1',
     dataIndex:'',
-    render:({imgsrc})=>{
-      return <div className='flex'> <img className='w-40 h-32' src={imgsrc} alt="" /> </div>
+    render:({imgsrc1})=>{
+      return <div className='flex'> <img className='w-40 h-32' src={imgsrc1} alt="" /> </div>
       }
   },
   {
-    title:'img2',
+    title:'图片2',
     dataIndex:'',
-    render:({imgsrc})=>{
-      return <div className='flex'> <img className='w-40 h-32' src={imgsrc} alt="" /> </div>
+    render:({imgsrc2})=>{
+      return <div className='flex'> <img className='w-40 h-32' src={imgsrc2} alt="" /> </div>
       }
   },
   {
-    title:'img3',
+    title:'图片3',
     dataIndex:'',
-    render:({imgsrc})=>{
-      return <div className='flex'> <img className='w-40 h-32' src={imgsrc} alt="" /> </div>
+    render:({imgsrc3})=>{
+      return <div className='flex'> <img className='w-40 h-32' src={imgsrc3} alt="" /> </div>
       }
   },
   {
