@@ -21,6 +21,7 @@ api.interceptors.response.use((response: any) => {
   if(response.data.code===204 || response.data.code===200){
     return response.data
   }else{
+    console.log(response);
     message.error(response.data.msg as string)
     return ;
   }

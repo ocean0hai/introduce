@@ -18,7 +18,7 @@ export default defineConfig({
 	},
   server: {
 		port: 8000,
-		origin: 'http://127.0.0.1:8000',
+		// origin: 'http://127.0.0.1:3000',
 		proxy: {
 			'/api': {
 				// target: 'http://101.35.251.18:3000/api',

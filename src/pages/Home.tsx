@@ -1,13 +1,12 @@
-import Middle from '@/components/home/Middle'
-
-import Show from '@/components/home/Show'
+import Middle from "@/components/home/Middle";
+import Show from "@/components/home/Show";
 export default function Home() {
-  
   return (
     <>
       <Middle />
-      <div className='w-full bg-gray-200'>
+      <div className="w-full">
         <Show></Show>
       </div>
     </>
-  ) }
+  );
+}

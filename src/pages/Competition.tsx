@@ -1,24 +1,31 @@
 import CompetitionItem from "@/components/competition/CompetitionItem"
-import useGetTable from "@/hooks/useGetTable"   
+import { useTranslation } from "react-i18next"
+const competeArr:Array<any>=[]
+for (let i = 0; i < 3; i++) {
+ competeArr.push({
+  name:`${i}`,
+  text:`${i}`,
+  link:`${i}`,
+  imgsrc1:'1'
 
+ }) 
+}
 export default function Competition() {
-  const {data}=useGetTable('competition')
-  console.log(data);
-  
+  const {t}=useTranslation() 
   return (
-    <div className="w-[1400px] mx-auto ">
+    <>
       <div className="bg-red-500">
         <h1 className="text-[50px] ml-10  py-5">
-          比赛
+          {t('competition')}
         </h1>
       </div>
       {
-        data.map(item=>{
+        competeArr.map((item,i)=>{
           return(
-            <CompetitionItem key={item.id} {...item} />  
+            <CompetitionItem key={i} {...item} />  
           )
         })
       }
-    </div>
+    </>
   )
 }

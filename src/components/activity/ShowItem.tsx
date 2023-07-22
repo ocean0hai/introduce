@@ -1,5 +1,4 @@
 interface propsType{
-  id:number,
   name:string,
   time:string,
   imgsrc1:string,
@@ -20,9 +19,9 @@ export default function ShowItem({
         时间:{time}
       </div>
       <div className='flex justify-around mb-7'>
-        <img className='w-[400px]' src={imgsrc1} alt="" />
-        <img className='w-[400px]' src={imgsrc2} alt="" />
-        <img className='w-[400px]' src={imgsrc3} alt="" />
+        <img className='w-[400px]' src={"../../../public/activity/"+ imgsrc1+".jpg"} alt="" />
+        <img className='w-[400px]' src={"../../../public/activity/"+ imgsrc2+".jpg"} alt="" />
+        <img className='w-[400px]' src={"../../../public/activity/"+ imgsrc3+".jpg"} alt="" />
       </div>
     </div>
   )

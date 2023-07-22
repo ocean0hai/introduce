@@ -5,6 +5,8 @@ import 'tailwindcss/tailwind.css'
 import {BrowserRouter} from 'react-router-dom'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'antd/dist/reset.css';
+import './locales/react-config.ts'
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter> 

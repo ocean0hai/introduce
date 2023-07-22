@@ -1,20 +1,30 @@
-import HonorBlock from "@/components/honor/HonorBlock"
-import useGetTable from "@/hooks/useGetTable"
-import { honorts } from "@/utils/honor"
-
+import HonorItem from "@/components/honor/HonorItem"
+import { useTranslation } from "react-i18next"
+const honorArr:Array<any>=[]
+for (let i = 0; i < 5; i++) {
+  honorArr.push({
+    name:'全国大学生创新比赛',
+    time:'2023-2-5',
+    img:'1'
+  }) 
+}
 export default function Honor() {
-  const {data}=useGetTable('honor')
-  const datatime=honorts(data) 
+  const {t}=useTranslation()
   return (
-    <div className="w-[1400px] mx-auto">
+    <div >
       <div className="w-full bg-cyan-50">
-        <h1 className="py-10 text-center ml-10 text-[40px]">荣誉</h1>
+        <h1 className="py-10 text-center ml-10 text-[40px] font-extrabold">{t('honor')}</h1>
       </div>
-      {
-        Object.keys(datatime).map((item,index)=>{
-          return  <HonorBlock key={index} year={item} data={datatime[item]} /> 
+      <div className="grid grid-cols-3">
+         {
+        honorArr.map((item,i)=>{
+          return (
+            <HonorItem key={i} {...item} />
+          )
         })
       }
+      </div>
+      
     </div>
   )
 }
