@@ -14,8 +14,9 @@ export default function Button({
     onClick={onClick}
     className='
       border-0 
-      w-52 
-      h-20
+      md:w-52 
+      md:h-20
+      p-2
      bg-yellow-400 
      text-white 
       rounded-full 
@@ -23,7 +24,7 @@ export default function Button({
     active:bg-yellow-600
       no-underline
     '>
-        <span className='text-[30px]'>
+        <span className='text-lg md:text-[30px]'>
           {children}
         </span> 
     </button>

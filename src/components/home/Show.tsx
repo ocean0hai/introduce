@@ -16,11 +16,11 @@ const data2 = {
 export default function Show() {
   const { t } = useTranslation();
   return (
-    <div className="mt-5  flow-root">
-      <div className="mt-10">
-        <h1 className="text-[80px]">认识我们</h1>
+    <div className="mt-5 flow-root">
+      <div className="md:mt-10">
+        <h1 className="text-3xl font-bold md:text-[80px]">认识我们</h1>
       </div>
-      <div className="drop-shadow-lg grid grid-cols-1 md:grid-cols-2 mx-auto bg-white my-20">
+      <div className="drop-shadow-lg grid grid-cols-1 md:grid-cols-2 mx-auto bg-white md:my-20">
         <div className="">
           <img
             className="w-full h-full"

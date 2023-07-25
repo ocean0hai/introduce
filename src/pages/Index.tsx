@@ -9,7 +9,7 @@ export default function Index() {
       <Header />
       <CarouselImg />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

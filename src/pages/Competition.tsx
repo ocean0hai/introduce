@@ -15,9 +15,9 @@ export default function Competition() {
   return (
     <>
       <div className="bg-red-500">
-        <h1 className="text-[50px] ml-10  py-5">
+        <div className="text-center md:text-[50px] py-3 md:py-5">
           {t('competition')}
-        </h1>
+        </div>
       </div>
       {
         competeArr.map((item,i)=>{

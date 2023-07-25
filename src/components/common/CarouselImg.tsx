@@ -13,14 +13,13 @@ interface dataType{
 export default function CarouselImg() {
   
   return (
-    <div className=' h-[500px] mb-10'>
+    <div className='w-5/6 mx-auto'>
       <Carousel autoPlay infiniteLoop showThumbs={false}>
         {
            data.map((item,index)=>{
             return(
-              <div className='w-full h-[500px]' key={index}>
+              <div className='w-full h-[13rem]  md:h-[500px]' key={index}>
                   <img className='w-full h-full' src={'../../../public/swippers/'+item.img+'.jpg'}/>
-                  <p className="legend">{item.text}</p>
               </div>
             )
           })

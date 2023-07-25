@@ -19,7 +19,7 @@ const data = [
   {
     key: "competition",
     icon: "material-symbols:all-match-outline-sharp",
-    label: "比赛",
+    label: "竞赛",
   },
   {
     key: "honor",
@@ -98,7 +98,7 @@ export default function Header() {
         )}
       </div>
       {show ? (
-        <div className="absolute top-20 z-50 w-full bg-gray-200">
+        <div className="absolute top-10 md:top-20 z-50 w-full bg-gray-100">
           {data.map((item) => {
             return (
               <Link
@@ -112,8 +112,8 @@ export default function Header() {
                       : "",
                 }}
               >
-                <Icon className="h-full w-10" icon={item.icon} />
-                <span className="text-[25px]">{t(item.key)}</span>
+                <Icon className="h-full md:w-10" icon={item.icon} />
+                <span className=" md:text-[25px]">{t(item.key)}</span>
               </Link>
             );
           })}
