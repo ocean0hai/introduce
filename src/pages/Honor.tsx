@@ -15,7 +15,7 @@ export default function Honor() {
       <div className="w-full bg-cyan-50">
         <h1 className="py-10 text-center ml-10 text-[40px] font-extrabold">{t('honor')}</h1>
       </div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3">
          {
         honorArr.map((item,i)=>{
           return (

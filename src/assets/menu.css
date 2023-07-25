@@ -1,0 +1,16 @@
+/* 未缩小之前 */
+.menu1 {
+    display: flex;
+}
+.menu2 {
+  display: none;
+}
+/* 缩小之后 */
+@media (max-width: 1100px) {
+  .menu1 {
+    display: none;
+  }
+  .menu2 {
+    display: block;
+  }
+}

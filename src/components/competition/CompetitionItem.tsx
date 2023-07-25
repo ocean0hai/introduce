@@ -16,7 +16,7 @@ export default function CompetitionItem({
       <h1 className="text-[40px] mt-4 font-bold text-center">{name}</h1>
       <div className="my-5 mx-9">
         <img
-          className="w-[400px] float-left h-[300px] rounded-2xl mr-8 mb-5"
+          className="md:w-[400px] w-full float-left h-[300px] rounded-2xl mr-8 mb-5"
           src={'../../../public/competition/'+imgsrc1+'.jpg'}
           alt=""
         />

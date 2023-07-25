@@ -13,7 +13,7 @@ export default function Displaylink({text,title,goPage}:propsType) {
     <div className='ml-3'>
       <h1 className='text-[50px] ml-3 mt-6'>{title}</h1> 
       <div className='text-[30px] mx-3'>{text}</div>
-      <div className='w-full text-center mt-8'>
+      <div className='w-full text-center my-4'>
         <Button  onClick={()=>navigate(goPage)} >{t('readmore')}</Button> 
       </div>
     </div>

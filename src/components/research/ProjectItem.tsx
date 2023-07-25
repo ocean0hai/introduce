@@ -11,8 +11,8 @@ export default function ProjectItem(data: propsType) {
         <h3 className="text-center font-bold">{name}</h3>
         <div className="w-full">
           <img
-            className=" float-left mr-9 mb-3 rounded-2xl w-[400px] h-[300px]"
-            src={img}
+            className=" float-left mr-9 rounded-2xl md:w-[400px] w-full h-[300px]"
+            src={"../../public/research/" + img + ".jpg"}
             alt=""
           />
           {text}

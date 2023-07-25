@@ -4,9 +4,7 @@ export default function Home() {
   return (
     <>
       <Middle />
-      <div className="w-full">
-        <Show></Show>
-      </div>
+      <Show></Show>
     </>
   );
 }
