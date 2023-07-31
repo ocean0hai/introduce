@@ -2,12 +2,8 @@ import TeamItem from "@/components/TeamItem";
 import { useTranslation } from "react-i18next";
 const tearch = [
   {
-    name: "老师1",
-    img: "蜘蛛侠",
-  },
-  {
-    name: "老师2",
-    img: "蜘蛛侠",
+    name: "凤黄浩",
+    img: "凤黄浩",
   },
 ];
 const student: Array<any> = [
@@ -67,12 +63,12 @@ const student: Array<any> = [
 
 export default function Team() {
   const { t } = useTranslation();
-
+   
   return (
     <div>
-      <div className="text-[3rem] font-black text-center">我们团队</div>
+      <div className=" py-3 md:text-[3rem] font-black text-center">{t('teamtitle')}</div>
       {/*老师 */}
-      {tearch.length === 0 ? (
+      {tearch.length !== 0 ? (
         <TeamItem title={t("instructor")} data={tearch}></TeamItem>
       ) : null}
       {/* 学生 */}

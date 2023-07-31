@@ -9,37 +9,39 @@ const data = [
   {
     key: "home",
     icon: "ion:home",
-    label: "主页",
+    label: "home",
   },
   {
     key: "research",
     icon: "academicons:researcherid",
-    label: "研究",
+    label: "research",
   },
   {
-    key: "competition",
+    key: "laboratory/competition",
     icon: "material-symbols:all-match-outline-sharp",
-    label: "竞赛",
+    label: "competition",
   },
-  {
-    key: "honor",
-    icon: "bxs:trophy",
-    label: "荣誉",
-  },
-  {
-    key: "team",
-    icon: "arcticons:team-fight-tactics",
-    label: "团队",
-  },
+  // {
+  //   key: "honor",
+  //   icon: "bxs:trophy",
+  //   label: "荣誉",
+  // },
+  // {
+  //   key: "team",
+  //   icon: "arcticons:team-fight-tactics",
+  //   label: "团队",
+  // },
   {
     key: "activity",
     icon: "carbon:user-activity",
-    label: "活动",
+    label: "activity",
   },
 ];
 
 export default function Header() {
   const location = useLocation();
+  const bg=location.pathname.split("/")[2]
+  
   const [show, setShow] = useState(false);
   const { t } = useTranslation();
   const [lang, setLang] = useState("zh");
@@ -76,16 +78,17 @@ export default function Header() {
             <Link
               to={item.key}
               key={item.key}
-              className="flex px-3  my-2 items-center no-underline rounded-2xl hover:bg-gray-100"
+              onClick={()=>setShow(false)}
+              className="flex mx-1 my-2 items-center no-underline rounded-2xl hover:bg-gray-100"
               style={{
                 background:
-                  location.pathname === "/index/" + item.key
+                  new RegExp(bg).test(item.key) 
                     ? "rgb(226 232 240)"
                     : "",
               }}
             >
               <Icon className="h-full w-10" icon={item.icon} />
-              <span className="text-[2rem]">{t(item.key)}</span>
+              <span className="text-[2rem]">{t(item.label)}</span>
             </Link>
           );
         })}
@@ -113,7 +116,7 @@ export default function Header() {
                 }}
               >
                 <Icon className="h-full md:w-10" icon={item.icon} />
-                <span className=" md:text-[25px]">{t(item.key)}</span>
+                <span className=" md:text-[25px]">{t(item.label)}</span>
               </Link>
             );
           })}

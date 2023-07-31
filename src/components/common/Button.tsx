@@ -23,6 +23,7 @@ export default function Button({
      hover:bg-yellow-500
     active:bg-yellow-600
       no-underline
+      shadow-lg
     '>
         <span className='text-lg md:text-[30px]'>
           {children}

@@ -6,6 +6,7 @@ import Research from "@/pages/Research";
 import Team from "@/pages/Team";
 import Honor from "@/pages/Honor";
 import Index from "@/pages/Index";
+import Laboratory from "@/pages/Laboratory";
 const routes = [
   {
     path: "/index",
@@ -20,17 +21,29 @@ const routes = [
         element: <Activity />,
       },
       {
-        path: "competition",
-        element: <Competition />,
+        path: "laboratory",
+        element: <Laboratory />,
+        children: [
+          {
+            index:true,
+            element:<Navigate to="/index/laboratory/competition" />
+          },
+          {
+            path: "competition",
+            element: <Competition />,
+          },
+          {
+            path: "team",
+            element: <Team />,
+          },
+        ],
       },
+
       {
         path: "research",
         element: <Research />,
       },
-      {
-        path: "team",
-        element: <Team />,
-      },
+
       {
         path: "honor",
         element: <Honor />,

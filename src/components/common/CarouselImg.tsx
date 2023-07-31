@@ -13,7 +13,7 @@ interface dataType{
 export default function CarouselImg() {
   
   return (
-    <div className='w-5/6 mx-auto'>
+    <div className='w-full md:w-5/6 mx-auto'>
       <Carousel autoPlay infiniteLoop showThumbs={false}>
         {
            data.map((item,index)=>{

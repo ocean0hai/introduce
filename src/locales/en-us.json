@@ -1,13 +1,38 @@
 {
-  "title":"Computer Vision",
-	"home":"home",
-  "team":"team",
-  "research":"research",
-  "competition":"competition",
-  "activity":"activity",
-  "honor":"honor",
-  "readmore":"Read More",
-  "instructor":"Instructor",
-  "member":"Member",
-  "titleactivity":"Rich and colorful activities"
+  "page": "导航栏",
+  "title": "Computer Vision",
+  "home": "home",
+  "research": "research",
+  "competition": "laboratory",
+  "activity": "activity",
+  "honor": "honor",
+  "team": "team",
+
+  "page1": "首页页面",
+  "homeresearch": "Computer vision includes pattern recognition, machine learning, deep learning, algorithm development, application, emotional computing (facial expression recognition), social assistance robots, social behavior analysis, biomedical signal processing, brain and human-machine interface, and more.",
+  "laboratorytext": "We welcome you to join our family, we can provide you want to learn the environment and atmosphere, but also provide a lot of machine learning, computer vision and digital system design learning direction. The aim is to raise public awareness of innovative technologies, such as social robots, to promote well-being and healthcare, among other things.",
+  "homeactivity": "The laboratory will hold activities, which can increase teamwork spirit and ability, improve organizational cohesion, stimulate enthusiasm, enhance confidence, cultivate social responsibility, release pressure and improve mental state.",
+  "readmore": "Read More",
+
+  "page3": "实验室简介页面",
+  "laboratory": "Introduction to the laboratory",
+  "laboratory_text1": "HSR&AI - Social Robot and Artificial Intelligence Laboratory, from the School of Computer Science and Engineering, Changshu Institute of Technology, is an innovative laboratory with multi-faceted development talents and full of research and development vitality. The current research projects include social robot, through the basic principle of humanoid social robot research, human-robot music and game interaction design; Machine vision hearing, study and understand the principles of computer image processing and electronic sound processing, acquire robot visual and auditory signals and use pattern recognition for artificial intelligence processing; Robot soccer, integrating robot kinematics/vision/network/interaction, multi-robot interactive soccer, and participate in RoboCup competition.",
+  "laboratory_text2": "At present, the laboratory has two instructors, one NAO robot, two LeapMotion sensors, one audio synthesizer and one webcam, and maintains close cooperation with relevant units in Suzhou City. In the future, several corresponding robots will be purchased, as well as physiological signals (EEG, EDA, etc.) for the collection and processing of bioelectrical signal data such as emotions.",
+  "laboratory_text3": "Our laboratory warmly welcomes students of all grades to join, and often organizes students to actively participate in competitions, has won provincial programming awards, while hosting a number of different levels of college students innovation and entrepreneurship projects, and actively participates in various cultural science popularization activities within the scope of Suzhou city, and has achieved good social response. At present, the laboratory has a long-term cooperation with Suzhou Tablet Museum to jointly carry out social practice activities of 'Connecting ancient and modern chain - Tang Xiaohu talks about national treasure', using robot 'Tang Xiaohu' to give children a variety of knowledge, and also provide children with a platform to contact robots and understand robots. In addition, the lab also cooperates with the Changshu Special Education School to use robots to teach special children with autism, while using electric skin bracelets in class to monitor children's emotions in real time. As the project continues to advance, the lab's research results will provide valuable data for the study of children with autism in the future.",
+
+  "page2": "研究页面",
+  "researchtitle1": "Application of NAo-based human-computer interaction in autism intervention therapy",
+  "researchtitle2": "Application and research based on man-machine collaborative method in autism classroom",
+  "researchtitle3": "Application of Music Therapy Based on Hand Movement Tracking in Autism",
+  "research1": "In order to provide better services to autistic people, the team uses the human-computer interaction function of the humanoid robot NAO to provide the most cutting-edge interaction means for autistic children, aiming to study and promote the application of human-computer interaction of the humanoid robot NAO in autism intervention therapy.",
+  "research2": "In order to provide better services to autistic people, the team uses the human-computer interaction function of the humanoid robot NAO to provide the most cutting-edge interaction means for autistic children, aiming to study and promote the application of the human-computer interaction of the humanoid robot NAO in the autism teaching classroom.",
+  "research3": "Millions of people around the world suffer from mood swings, and children with autism are among them. This project is based on a multi-sensor wearable skin electric bracelet. By integrating PPG sensor and attitude sensor on the circuit board, and cooperating with the robot NAO, the inner emotions of autistic patients are monitored, analyzed and treated",
+
+  "page4": "团队页面",
+    "teamtitle": "Our Team",
+  "instructor": "Instructor",
+  "member": "Member",
+
+  "page5": "活动页面",
+  "titleactivity": "Rich and colorful activities"
 }

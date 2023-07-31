@@ -3,11 +3,10 @@ interface propsType {
   title:string
 }
 export default function TeamItem({ data,title }: propsType) {
-
   return (
     <div>
       <div className="my-5">
-        <div className=" font-bold py-4 text-[40px] pl-10">
+        <div className=" font-bold py-4 md:text-[40px] pl-10">
           {title}
         </div>
         <div className="grid grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 px-3 justify-items-center gap-5">

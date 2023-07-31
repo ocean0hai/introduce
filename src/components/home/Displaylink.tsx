@@ -11,9 +11,9 @@ export default function Displaylink({text,title,goPage}:propsType) {
   const {t}=useTranslation()
   return (
     <div className='ml-3'>
-      <div className=' font-semibold md:text-[50px] ml-3 my-4'>{title}</div> 
-      <div className=' md:text-[30px] mx-3'>{text}</div>
-      <div className='w-full text-center my-4'>
+      {/* <div className=' font-semibold md:text-[50px] ml-3 my-4'>{title}</div>  */}
+      <div className='md:mt-9 md:text-[30px] mx-3 md:leading-normal'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{t(text)}</div>
+      <div className='w-full text-center my-4 md:mt-10'>
         <Button  onClick={()=>navigate(goPage)} >{t('readmore')}</Button> 
       </div>
     </div>
