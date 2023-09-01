@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/utils/getImgSrc";
 interface propsType {
   name: string;
   text: string;
@@ -17,7 +18,7 @@ export default function CompetitionItem({
       <div className="my-5 mx-9">
         <img
           className="md:w-[400px] w-full float-left h-[300px] rounded-2xl mr-8 mb-5"
-          src={'../../../public/competition/'+imgsrc1+'.jpg'}
+          src={getAssetUrl("competition/" + imgsrc1 + ".jpg")}
           alt=""
         />
         <p className="md:text-[30px] mr-4">&nbsp; &nbsp; &nbsp;{text}</p>

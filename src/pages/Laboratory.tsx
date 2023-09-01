@@ -30,7 +30,7 @@ export default function Laboratory() {
                     : "",
               }}
             
-              className="text-center text-2xl md:py-3 md:text-3xl"
+              className="text-center no-underline text-2xl md:py-3 md:text-3xl"
               to={"/index/laboratory/" + item.to}
             >
               {t(item.to)}

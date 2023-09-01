@@ -1,16 +1,21 @@
-import { Image } from 'antd'
-interface propsType{
- img:string
+import { Image } from "antd";
+import { getAssetUrl } from "@/utils/getImgSrc";
+interface propsType {
+  img: string;
 }
-export default function Preview({img}:propsType) {
+export default function Preview({ img }: propsType) {
+  const imgsrc = getAssetUrl(`activity/${img}.jpg`);
   return (
-    <Image
-    width={'100%'}
-    height={'100%'}
-    src={"../../../public/activity/"+img+"图片.jpg"}
-    preview={{
-      src: '../../../public/activity/'+img+'图片.jpg',
-    }}
-  />
-  )
+    <div>
+      {imgsrc}
+      <Image
+        width={"100%"}
+        height={"100%"}
+        src={imgsrc}
+        preview={{
+          src: imgsrc,
+        }}
+      />
+    </div>
+  );
 }

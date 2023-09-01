@@ -59,6 +59,14 @@ const student: Array<any> = [
     name: "章心如",
     img: "章心如",
   },
+  {
+    name: "张婧",
+    img: "张婧",
+  },
+  {
+    name: "于慧敏",
+    img: "于慧敏",
+  },
 ];
 
 export default function Team() {

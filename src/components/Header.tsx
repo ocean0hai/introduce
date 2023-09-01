@@ -56,7 +56,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="lg:py-8 flex justify-around mt-3 ">
+    <div className="lg:py-8 flex justify-between mt-3 ">
       <div className="flex h-full w-[16rem]  pl-2 items-center">
         <Icon className="w-[2rem] md:w-1/3 h-full" icon="bxs:low-vision" />
         <div className="text-[1rem] md:text-[2rem]">{t("title")}</div>
@@ -72,14 +72,14 @@ export default function Header() {
           ]}
         ></Select>
       </div>
-      <div className="menu1 justify-between">
+      <div className="menu1 justify-around">
         {data.map((item) => {
           return (
             <Link
               to={item.key}
               key={item.key}
               onClick={()=>setShow(false)}
-              className="flex mx-1 my-2 items-center no-underline rounded-2xl hover:bg-gray-100"
+              className="flex px-2 my-2 items-center no-underline rounded-2xl hover:bg-gray-100"
               style={{
                 background:
                   new RegExp(bg).test(item.key) 

@@ -12,7 +12,7 @@ export default function HonorItem({time,name,img}:propsType) {
         <h2>时间:{time}</h2>
       </div>
       <div className="w-full">
-        <img className="w-full" src={'../../../public/honor/'+img+'.jpg'} alt="" />
+        <img className="w-full" src={'/src/assets/honor/'+img+'.jpg'} alt="" />
       </div>
     </div>
   )

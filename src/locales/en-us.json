@@ -12,6 +12,7 @@
   "homeresearch": "Computer vision includes pattern recognition, machine learning, deep learning, algorithm development, application, emotional computing (facial expression recognition), social assistance robots, social behavior analysis, biomedical signal processing, brain and human-machine interface, and more.",
   "laboratorytext": "We welcome you to join our family, we can provide you want to learn the environment and atmosphere, but also provide a lot of machine learning, computer vision and digital system design learning direction. The aim is to raise public awareness of innovative technologies, such as social robots, to promote well-being and healthcare, among other things.",
   "homeactivity": "The laboratory will hold activities, which can increase teamwork spirit and ability, improve organizational cohesion, stimulate enthusiasm, enhance confidence, cultivate social responsibility, release pressure and improve mental state.",
+  "about": "About Us",
   "readmore": "Read More",
 
   "page3": "实验室简介页面",
@@ -29,7 +30,7 @@
   "research3": "Millions of people around the world suffer from mood swings, and children with autism are among them. This project is based on a multi-sensor wearable skin electric bracelet. By integrating PPG sensor and attitude sensor on the circuit board, and cooperating with the robot NAO, the inner emotions of autistic patients are monitored, analyzed and treated",
 
   "page4": "团队页面",
-    "teamtitle": "Our Team",
+  "teamtitle": "Our Team",
   "instructor": "Instructor",
   "member": "Member",
 

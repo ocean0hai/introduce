@@ -1,7 +1,7 @@
 import Preview from "@/components/activity/Preview";
 import { useTranslation } from "react-i18next";
-const activityArr: Array<any> = [
-  "碑刻博物馆",
+const activityArr: Array<string> = [
+  "碑刻博物馆_2",
   "碑刻博物馆",
   "融合教育",
   "学生进校园",
@@ -18,12 +18,7 @@ export default function Activity() {
         {activityArr.map((item, i) => {
           return (
             <div className=" mt-4 md:h-[16rem] drop-shadow-xl" key={i}>
-              {/* <img
-                className="w-full h-full"
-                src={"../../public/activity/" + item + "图片.jpg"}
-                alt=""
-              /> */}
-              <Preview  img={item} />
+              <Preview img={item} />
             </div>
           );
         })}
